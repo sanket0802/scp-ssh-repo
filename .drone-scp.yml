@@ -14,4 +14,4 @@ steps:
 +       from_secret: ssh_password
       target: /home/deploy/web
       source:
-        - sanket0802/scp-ssh-repo/.drone-scp.yml
+        - sanket0802/scp-ssh-repo/.drone-scp.yml 
