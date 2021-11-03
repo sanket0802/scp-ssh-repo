@@ -12,6 +12,17 @@ steps:
       port: 22
 +     password:
 +       from_secret: ssh_password
-      target: /home/deploy/web
+      target: public
       source:
-        - sanket0802/scp-ssh-repo/.drone-scp.yml 
+    - name: ssh commands
+      image: appleboy/drone-ssh
+      settings:
+        host: 54.175.238.108
+        username: ubuntu
+        port: 22
+        key:
+          from_secret: ssh_key
+          script: .drone-scp.yml
+             -sudo chown ubuntu:ubuntu /var/run/docker.sock
+             
+        
