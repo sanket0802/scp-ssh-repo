@@ -1,0 +1,17 @@
+kind: pipeline
+name: docker
+name: default
+steps:
+  - name: scp files
+    image: appleboy/drone-scp
+    settings:
+      host:
+        - 54.164.248.191
+        - 54.175.238.108
+      user: ubuntu
+      port: 22
++     password:
++       from_secret: ssh_password
+      target: /home/deploy/web
+      source:
+        - sanket0802/scp-ssh-repo/.drone-scp.yml
