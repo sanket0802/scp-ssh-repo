@@ -5,14 +5,13 @@ steps:
  - name: scp files
    image: appleboy/drone-scp
    settings:
-      host:
-        - 54.175.238.108
+      host: 54.175.238.108
       user: ubuntu
-    key:
-      from_secret: ssh-key        
-    port: 22
-    target: 
-    source:
+      key:
+        from_secret: ssh-key        
+      port: 22
+      target: 
+      source:
         - release/*
 
         
