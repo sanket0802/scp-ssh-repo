@@ -11,7 +11,7 @@ steps:
     key:
       from_secret: ssh-key        
     port: 22
-    target: /home/deploy/web
+    target: 
     source:
         - release/*
 
