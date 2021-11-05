@@ -10,7 +10,7 @@ steps:
       key:
         from_secret: ssh-key        
       port: 22
-      target: /
+      target: home/
       source: demo.txt
 
       
