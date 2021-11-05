@@ -2,27 +2,18 @@ kind: pipeline
 name: docker
 name: default
 steps:
-  - name: scp files
-    image: appleboy/drone-scp
-    settings:
+ - name: scp files
+   image: appleboy/drone-scp
+   settings:
       host:
-        - 54.164.248.191
         - 54.175.238.108
       user: ubuntu
-      port: 22
-+     password:
-+       from_secret: ssh_password
-      target: public
-      source:
-    - name: ssh commands
-      image: appleboy/drone-ssh
-      settings:
-        host: 54.175.238.108
-        username: ubuntu
-        port: 22
-        key:
-          from_secret: ssh_key
-          script: .drone-scp.yml
-             -sudo chown ubuntu:ubuntu /var/run/docker.sock
-             
++   key:
++       from_secret: ssh_key        
+    port: 22
+    command_timeout: 2m
+    target: /home/deploy/web
+    source:
+        - release/*
+
         
