@@ -9,7 +9,7 @@ steps:
         - 54.175.238.108
       user: ubuntu
     key:
-      from_secret: ssh_key        
+      from_secret: ssh-key        
     port: 22
     target: /home/deploy/web
     source:
